@@ -3,7 +3,7 @@
 #ifndef LOG
 #define LOG
 
-namespace log {
+namespace logs {
 	typedef const size_t log;
 	log WITHOUT_DATA = 0;
 	log NOT_INT = 1;
