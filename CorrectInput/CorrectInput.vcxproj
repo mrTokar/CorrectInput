@@ -136,6 +136,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BaseInputStream.hpp" />
     <ClInclude Include="input.h" />
     <ClInclude Include="NumInputStream.hpp" />
     <ClInclude Include="log.h" />
