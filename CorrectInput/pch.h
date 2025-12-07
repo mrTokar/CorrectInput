@@ -8,6 +8,9 @@
 #define PCH_H
 
 #include <iostream>
+#include <concepts>
+#include <vector>
+#include <string>
 
 #include "log.h"
 
