@@ -8,14 +8,15 @@ template<typename T>
 class BaseInputStream {
 private:
 	istream* in = nullptr;
-	vector<bool> logger;
 
 protected:
-	BaseInputStream() : logger(log::CNTLOG, true) {};
+	vector<bool> logger;
+
+	BaseInputStream() : logger(logs::CNTLOG, true) {};
 	void setStream(istream& in) { this->in = &in; };
 
 	virtual bool isCorrectType(string const& data);
-	virtual void chageType(T& var);
+	virtual void chageType(T& var, string const& data);
 
 	virtual bool read(string& var)
 	{
@@ -37,12 +38,12 @@ public:
 				return true;
 			}
 			else {
-				if (logger[log::NOT_INT]) clog << "Invalid symbol " << input << endl;
+				if (logger[logs::NOT_INT]) clog << "Invalid symbol " << input << endl;
 				return false;
 			}
 		}
 		else {
-			if (logger[log::WITHOUT_DATA]) clog << "Not enought data" << endl;
+			if (logger[logs::WITHOUT_DATA]) clog << "Not enought data" << endl;
 			return false;
 		}
 		return true;
@@ -73,7 +74,7 @@ public:
 		return (cnt_read == cnt_row);
 	}
 
-	void disable_log(log::log type) { logger[type] = false; };
-	void enable_log(log::log type) { logger[type] = true; }
+	void disable_log(logs::log type) { logger[type] = false; };
+	void enable_log(logs::log type) { logger[type] = true; }
 
 };
