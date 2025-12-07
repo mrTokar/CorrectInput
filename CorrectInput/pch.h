@@ -7,5 +7,8 @@
 #ifndef PCH_H
 #define PCH_H
 
+#include <iostream>
+
+#include "log.h"
 
 #endif //PCH_H
