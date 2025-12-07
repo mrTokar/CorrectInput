@@ -3,8 +3,10 @@
 
 using namespace std;
 
+template<typename T>
+concept numbers = integral<T> && !is_same_v<T, bool>;
 
-template<integral NUM>
+template<numbers NUM>
 class IntInputStream {
 private:
 	istream* in = nullptr;
