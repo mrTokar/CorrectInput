@@ -7,7 +7,7 @@ template<typename T>
 concept numbers = integral<T> && !is_same_v<T, bool>;
 
 template<numbers NUM>
-class IntInputStream: 
+class NumInputStream: 
 	public BaseInputStream<NUM>
 {
 protected:
