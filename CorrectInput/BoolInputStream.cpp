@@ -13,6 +13,10 @@ void BoolInputStream::changeType(bool& var, string const& data)
 	var = (data == "true");
 }
 
+BoolInputStream::BoolInputStream() : BaseInputStream()
+{
+}
+
 bool BoolInputStream::isCorrectType(string const& data)
 {
 	if (data.size() == 1) {

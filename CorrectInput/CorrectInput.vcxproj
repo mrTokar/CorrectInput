@@ -143,6 +143,7 @@
   <ItemGroup>
     <ClInclude Include="BaseFileInput.hpp" />
     <ClInclude Include="BaseInputStream.hpp" />
+    <ClInclude Include="BoolFileInput.hpp" />
     <ClInclude Include="BoolInputStream.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="NumFileInput.hpp" />
