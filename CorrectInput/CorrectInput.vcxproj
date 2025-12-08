@@ -141,6 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BaseFileInput.hpp" />
     <ClInclude Include="BaseInputStream.hpp" />
     <ClInclude Include="BoolInputStream.h" />
     <ClInclude Include="input.h" />
