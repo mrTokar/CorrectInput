@@ -5,7 +5,7 @@ BoolInputStream::BoolInputStream(istream& in): BaseInputStream<bool>(in)
 {
 }
 
-void BoolInputStream::chageType(bool& var, string const& data)
+void BoolInputStream::changeType(bool& var, string const& data)
 {
 	if (data.size() == 1) {
 		var = stoi(data);

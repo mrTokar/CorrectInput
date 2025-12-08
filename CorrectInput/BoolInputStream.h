@@ -7,7 +7,7 @@ class BoolInputStream :
 {
 protected:
     bool isCorrectType(string const& data) override;
-    void chageType(bool& var, string const& data) override;
+    void changeType(bool& var, string const& data) override;
 
 public:
     BoolInputStream(istream& in);

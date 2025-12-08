@@ -16,7 +16,7 @@ protected:
 	void setStream(istream& in) { this->in = &in; };
 
 	virtual bool isCorrectType(string const& data) = 0;
-	virtual void chageType(T& var, string const& data) = 0;
+	virtual void changeType(T& var, string const& data) = 0;
 
 	virtual bool read(string& var)
 	{
@@ -34,7 +34,7 @@ public:
 		string input;
 		if (read(input)) {
 			if (isCorrectType(input)) {
-				chageType(variable, input);
+				changeType(variable, input);
 				return true;
 			}
 			else {
@@ -54,7 +54,7 @@ public:
 		size_t cnt_read = 0;
 		T input;
 		array.clear();
-		while (cnt_read < cnt && getInt(input)) {
+		while (cnt_read < cnt && get(input)) {
 			cnt_read++;
 			array.push_back(input);
 		}

@@ -4,10 +4,12 @@
 
 using namespace std;
 
-template<typename T>
-concept numbers = integral<T> && !is_same_v<T, bool>;
+namespace template_num{
+	template<typename T>
+	concept numbers = integral<T> && !is_same_v<T, bool>;
+}
 
-template<numbers NUM>
+template<template_num::numbers NUM>
 class NumInputStream: 
 	public BaseInputStream<NUM>
 {
@@ -15,6 +17,8 @@ protected:
 	using BaseInputStream<NUM>::logger;
 	int min_value = numeric_limits<NUM>::min();
 	int max_value = numeric_limits<NUM>::max();
+
+	NumInputStream() : BaseInputStream<NUM>() {}
 
 	bool isCorrectType(string const& data) override {
 		for (auto& c : data)
@@ -26,7 +30,7 @@ protected:
 		return true;
 	}
 
-	void chageType(NUM& var, string const& data) override {
+	void changeType(NUM& var, string const& data) override {
 		var = stoi(data);
 	}
 
@@ -53,4 +57,3 @@ public:
 	inline void setMin(int value) { min_value = value; };
 	inline void setMax(int value) { max_value = value; };
 };
-

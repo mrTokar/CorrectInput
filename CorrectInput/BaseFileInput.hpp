@@ -1,14 +1,14 @@
+#pragma once
 #include "BaseInputStream.hpp"
 
 template<typename T>
 class BaseFileInput :
-	public: BaseInputStream<T>
+	public BaseInputStream<T>
 {
 private:
 	ifstream & fin;
 
 protected:
-	using BaseFileInput<T>::logger;
 
 	bool read(string& var) override
 	{
@@ -19,7 +19,7 @@ protected:
 			}
 		}
 		else {
-			if (logger[logs::CLOSE_FILE]) clog << "File is close\n";
+			if (BaseInputStream<T>::logger[logs::CLOSE_FILE]) clog << "File is close\n";
 		}
 		return false;
 	}

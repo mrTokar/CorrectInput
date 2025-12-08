@@ -145,6 +145,7 @@
     <ClInclude Include="BaseInputStream.hpp" />
     <ClInclude Include="BoolInputStream.h" />
     <ClInclude Include="input.h" />
+    <ClInclude Include="NumFileInput.hpp" />
     <ClInclude Include="NumInputStream.hpp" />
     <ClInclude Include="log.h" />
     <ClInclude Include="pch.h" />
