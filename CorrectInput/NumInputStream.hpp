@@ -1,4 +1,5 @@
 #pragma once
+#include "pch.h"
 #include "BaseInputStream.hpp"
 
 using namespace std;
@@ -11,6 +12,7 @@ class NumInputStream:
 	public BaseInputStream<NUM>
 {
 protected:
+	using BaseInputStream<NUM>::logger;
 	int min_value = numeric_limits<NUM>::min();
 	int max_value = numeric_limits<NUM>::max();
 
@@ -42,8 +44,10 @@ protected:
 	}
 
 public:
+	NumInputStream(istream& in) : BaseInputStream<NUM>(in) {};
+
 	bool get(NUM& var) override {
-		return BaseInputStream::get(var) && canUse(NUM& var);
+		return BaseInputStream<NUM>::get(var) && canUse(var);
 	}
 
 	inline void setMin(int value) { min_value = value; };

@@ -15,8 +15,8 @@ protected:
 	BaseInputStream() : logger(logs::CNTLOG, true) {};
 	void setStream(istream& in) { this->in = &in; };
 
-	virtual bool isCorrectType(string const& data);
-	virtual void chageType(T& var, string const& data);
+	virtual bool isCorrectType(string const& data) = 0;
+	virtual void chageType(T& var, string const& data) = 0;
 
 	virtual bool read(string& var)
 	{
@@ -34,7 +34,7 @@ public:
 		string input;
 		if (read(input)) {
 			if (isCorrectType(input)) {
-				chageType(variable);
+				chageType(variable, input);
 				return true;
 			}
 			else {
