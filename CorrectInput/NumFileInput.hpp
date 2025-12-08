@@ -5,8 +5,8 @@
 
 template<typename NUM>
 class NumFileInput :
-	public BaseFileInput<NUM>,
-	public NumInputStream<NUM>
+	public virtual BaseFileInput<NUM>,
+	public virtual NumInputStream<NUM>
 {
 protected:
 	bool read(string& var) { return BaseFileInput<NUM>::read(var); }
